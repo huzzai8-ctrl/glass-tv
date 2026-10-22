@@ -25,6 +25,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 12266719
 
       - name: Install Android SDK packages
         run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
@@ -39,4 +41,3 @@ jobs:
           name: glass-tv-apk
           path: launcher/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
-          
